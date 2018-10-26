@@ -6,14 +6,12 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 
 /**
  *
@@ -21,13 +19,10 @@ import javax.persistence.OneToMany;
  */
 @Entity
 @NamedQueries({
-    @NamedQuery(name = "Autor.findAll", query = "SELECT a FROM Autor a"),
-    @NamedQuery(name = "Autor.findFilter", query = "SELECT a FROM Autor a WHERE a.nome like :filtro")
+    @NamedQuery(name = "Admin.findAll", query = "SELECT a FROM Admin a"),
+    @NamedQuery(name = "Admin.findFilter", query = "SELECT a FROM Admin a WHERE a.nome like :filtro")
 })
-public class Autor implements Serializable {
-
-    @OneToMany(mappedBy = "autor")
-    private List<Livro> livros;
+public class Admin implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -36,11 +31,19 @@ public class Autor implements Serializable {
     
     private String nome;
     
-    private int idade;
+    private String email;
+    
+    private String senha;
     
     private String endFoto;
-    
-    private String cidade;
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public Long getId() {
         return id;
@@ -58,12 +61,12 @@ public class Autor implements Serializable {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+    public String getEmail() {
+        return email;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getEndFoto() {
@@ -74,14 +77,12 @@ public class Autor implements Serializable {
         this.endFoto = endFoto;
     }
 
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
     
+    
+    
+
+
+  
     
 
     

@@ -1,3 +1,4 @@
 <%
-response.sendRedirect("admin/inicial/index.jsp");
+   //respons
+    response.sendRedirect("admin/inicial/index.jsp");
 %>

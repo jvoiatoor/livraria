@@ -3,12 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package dao;
+
+import modelo.Admin;
+
 
 /**
  *
  * @author dappo
  */
-public class Classsificacao {
+public class AdminDAO extends GenericDAO<Admin, Long>{
+    
+    public AdminDAO(){
+        super(Admin.class);
+    }
     
 }

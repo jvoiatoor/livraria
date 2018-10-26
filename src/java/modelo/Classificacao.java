@@ -21,12 +21,12 @@ import javax.persistence.OneToMany;
  */
 @Entity
 @NamedQueries({
-    @NamedQuery(name = "Genero.findAll", query = "SELECT g FROM Genero g"),
-    @NamedQuery(name = "Genero.findFilter", query = "SELECT g FROM Genero g WHERE g.genero like :filtro")
+    @NamedQuery(name = "Classificacao.findAll", query = "SELECT g FROM Classificacao g"),
+    @NamedQuery(name = "Classificacao.findFilter", query = "SELECT g FROM Classificacao g WHERE g.classificacao like :filtro")
 })
-public class Genero implements Serializable {
+public class Classificacao implements Serializable {
 
-    @OneToMany(mappedBy = "genero")
+    @OneToMany(mappedBy = "classificacao")
     private List<Livro> livros;
 
     private static final long serialVersionUID = 1L;
@@ -34,14 +34,14 @@ public class Genero implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private String genero;
+    private String classificacao;
 
-    public String getGenero() {
-        return genero;
+    public String getClassificacao() {
+        return classificacao;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setClassificacao(String Classificacao) {
+        this.classificacao = Classificacao;
     }
 
     public Long getId() {
@@ -62,10 +62,10 @@ public class Genero implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Genero)) {
+        if (!(object instanceof Classificacao)) {
             return false;
         }
-        Genero other = (Genero) object;
+        Classificacao other = (Classificacao) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -74,7 +74,7 @@ public class Genero implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Genero[ id=" + id + " ]";
+        return "modelo.Classificacao[ id=" + id + " ]";
     }
     
 }
