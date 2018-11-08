@@ -20,7 +20,8 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
     @NamedQuery(name = "Admin.findAll", query = "SELECT a FROM Admin a"),
-    @NamedQuery(name = "Admin.findFilter", query = "SELECT a FROM Admin a WHERE a.nome like :filtro")
+    @NamedQuery(name = "Admin.findFilter", query = "SELECT a FROM Admin a WHERE a.nome like :filtro"),
+    @NamedQuery(name = "Admin.logar", query = "SELECT a FROM Admin a WHERE a.email = :email and a.senha = :senha")
 })
 public class Admin implements Serializable {
 

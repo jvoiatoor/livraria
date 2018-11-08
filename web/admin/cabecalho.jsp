@@ -119,7 +119,7 @@
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="../assets/img/anime3.png">
+                      <img src="../../arquivos/${sessionScope['usuario'].endFoto}">
                   </div>
                   <!--<b class="caret d-none d-lg-block d-xl-block"></b>-->
                   <p class="d-lg-none">
@@ -135,7 +135,7 @@
                   </li>
                   <div class="dropdown-divider"></div>
                   <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Log out</a>
+                    <a href="../login/LoginWS?acao=sair" class="nav-item dropdown-item">Log out</a>
                   </li>
                 </ul>
               </li>

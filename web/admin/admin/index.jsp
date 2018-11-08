@@ -18,9 +18,7 @@
                 <th>
                     Nome
                 </th>
-                <th>
-                    Senha
-                </th>
+                
                 <th>
                     Email
                 </th>

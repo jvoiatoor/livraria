@@ -24,21 +24,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-5 pr-md-1">
-                    <div class="form-group">
-                        <label>Idade</label>
-                        <input type="number" name="txtIdade" required class="form-control" placeholder="Idade" value="${obj.idade}">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 pr-md-1">
-                    <div class="form-group">
-                        <label>Cidade</label>
-                        <input type="text" name="txtCidade" required class="form-control" placeholder="Cidade" value="${obj.cidade}">
-                    </div>
-                </div>
+           
+            
                 <div class="col-md-7">
                     <div class="form-group-file">
                         <label for="file">Foto</label>

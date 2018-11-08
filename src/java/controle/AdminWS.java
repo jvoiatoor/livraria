@@ -61,6 +61,12 @@ public class AdminWS extends HttpServlet {
                 request.setAttribute("obj", obj);
                 pagina = "edita.jsp";
                 break;
+                
+            case "sair":
+                request.getSession().setAttribute("admin", new Admin());
+                request.setAttribute("msg", "Você se deslogou com sucesso!");
+                pagina = "../login/login.jsp";
+                break;
             default:
                 dao = new AdminDAO();
                 if (request.getParameter("filtro") != null) {
@@ -119,7 +125,12 @@ public class AdminWS extends HttpServlet {
                 else{
                     obj.setNome(request.getParameter("txtNome"));
                     obj.setEmail(request.getParameter("txtEmail"));
-                     obj.setSenha(request.getParameter("txtSenha"));
+                    try {
+                        String criptografia = Criptografia.convertPasswordToMD5(request.getParameter("txtSenha"));
+                        obj.setSenha(criptografia);
+                    } catch (NoSuchAlgorithmException ex) {
+                        Logger.getLogger(AdminWS.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     obj.setEndFoto(request.getParameter("txtFoto"));
                     deucerto = dao.incluir(obj);
                     pagina="add.jsp";   

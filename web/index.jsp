@@ -1,4 +1,4 @@
 <%
    //respons
-    response.sendRedirect("admin/inicial/index.jsp");
+    response.sendRedirect("admin/login/login.jsp");
 %>
